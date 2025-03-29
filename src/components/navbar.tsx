@@ -21,7 +21,7 @@ export default function Navbar() {
               className="text-white font-bold text-xl flex items-center gap-2"
             >
               <Code2 className="text-blue-400" />
-              Your Name
+              Sithum Sandaruwan
             </Link>
           </motion.div>
 
