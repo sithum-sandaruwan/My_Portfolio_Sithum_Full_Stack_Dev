@@ -1,10 +1,65 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, User } from 'lucide-react';
-import Image from 'next/image';
+import { motion } from "framer-motion";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ExternalLink,
+  Code2,
+  Briefcase,
+  User,
+  BookOpen,
+  Award,
+  School,
+  ArrowRight, // Add this import
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
+  const projects = [
+    {
+      id: 1,
+      title: "E-Commerce Platform",
+      description:
+        "A full-featured online store with cart functionality and payment processing.",
+      technologies: ["Next.js", "Stripe", "Tailwind CSS"],
+      image:
+        "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=800",
+    },
+    {
+      id: 2,
+      title: "Task Management App",
+      description:
+        "Productivity application with drag-and-drop interface and team collaboration.",
+      technologies: ["React", "Node.js", "MongoDB"],
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800",
+    },
+  ];
+
+  const experiences = [
+    {
+      id: 1,
+      role: "Senior Frontend Developer",
+      company: "TechCorp Inc.",
+      period: "2021 - Present",
+      description:
+        "Leading the frontend development team, implementing new features, and improving application performance.",
+      icon: <Briefcase className="text-blue-400" />,
+    },
+    {
+      id: 2,
+      role: "Full Stack Developer",
+      company: "WebSolutions Ltd.",
+      period: "2018 - 2021",
+      description:
+        "Developed and maintained web applications using React, Node.js, and MongoDB.",
+      icon: <Briefcase className="text-purple-400" />,
+    },
+  ];
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -35,7 +90,12 @@ export default function Home() {
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 0.5, type: "spring", stiffness: 260, damping: 20 }}
+              transition={{
+                delay: 0.5,
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+              }}
               className="absolute -bottom-2 -right-2 bg-blue-500 rounded-full p-2 transform translate-x-1/2 glass-effect"
             >
               <Code2 size={24} />
@@ -48,37 +108,74 @@ export default function Home() {
             Full Stack Developer & UI/UX Designer
           </p>
           <div className="flex gap-6 justify-center mb-12">
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="https://github.com" 
+              href="https://github.com"
               className="hover:text-blue-400 transition-colors p-2 glass-effect rounded-full"
             >
               <Github size={24} />
             </motion.a>
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="https://linkedin.com" 
+              href="https://linkedin.com"
               className="hover:text-blue-400 transition-colors p-2 glass-effect rounded-full"
             >
               <Linkedin size={24} />
             </motion.a>
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="mailto:your@email.com" 
+              href="mailto:your@email.com"
               className="hover:text-blue-400 transition-colors p-2 glass-effect rounded-full"
             >
               <Mail size={24} />
             </motion.a>
           </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="flex gap-4 justify-center flex-wrap"
+          >
+            <Link
+              href="#about"
+              className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+            >
+              About Me
+            </Link>
+            <Link
+              href="#projects"
+              className="px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg transition-colors"
+            >
+              View Projects
+            </Link>
+            <Link
+              href="/blog"
+              className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+            >
+              My Blog
+            </Link>
+            <Link
+              href="/experience"
+              className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+            >
+              Experience
+            </Link>
+          </motion.div>
         </motion.div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
+      <section id="about" className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+            <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-3000"></div>
+          </div>
+        </div>
+        <div className="max-w-4xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -92,22 +189,43 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <p className="text-gray-300">
-                  I'm a passionate developer with expertise in building modern web applications.
-                  With a strong foundation in both frontend and backend technologies,
-                  I create elegant solutions to complex problems.
+                  I'm a passionate developer with expertise in building modern
+                  web applications. With a strong foundation in both frontend
+                  and backend technologies, I create elegant solutions to
+                  complex problems.
                 </p>
                 <p className="text-gray-300">
-                  When I'm not coding, you can find me exploring new technologies,
-                  contributing to open-source projects, or sharing knowledge with the developer community.
+                  When I'm not coding, you can find me exploring new
+                  technologies, contributing to open-source projects, or sharing
+                  knowledge with the developer community.
                 </p>
+                <div className="pt-4">
+                  <Link
+                    href="/experience"
+                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300"
+                  >
+                    View my full experience <ArrowRight size={16} />
+                  </Link>
+                </div>
               </div>
-              <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg p-6">
+              <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg p-6 glass-effect">
                 <h3 className="text-xl font-semibold mb-4">Tech Stack</h3>
                 <div className="grid grid-cols-2 gap-2">
-                  {['React', 'Next.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'PostgreSQL'].map((tech) => (
-                    <div key={tech} className="bg-white/5 rounded px-3 py-1">
+                  {[
+                    "React",
+                    "Next.js",
+                    "TypeScript",
+                    "Node.js",
+                    "Tailwind CSS",
+                    "PostgreSQL",
+                  ].map((tech) => (
+                    <motion.div
+                      key={tech}
+                      className="bg-white/5 rounded px-3 py-2 text-center"
+                      whileHover={{ scale: 1.05 }}
+                    >
                       {tech}
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -117,8 +235,14 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 bg-black/30">
-        <div className="max-w-4xl mx-auto">
+      <section id="projects" className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 w-full h-full bg-black/30">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+            <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-6000"></div>
+          </div>
+        </div>
+        <div className="max-w-4xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -130,42 +254,81 @@ export default function Home() {
               Featured Projects
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              {[1, 2].map((project) => (
-                <div key={project} className="group relative overflow-hidden rounded-lg bg-white/5">
-                  <div className="aspect-video w-full relative">
+              {projects.map((project) => (
+                <motion.div
+                  key={project.id}
+                  className="group relative overflow-hidden rounded-lg bg-white/5 backdrop-blur-sm border border-white/10"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: project.id * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="aspect-video w-full relative overflow-hidden">
                     <Image
-                      src={`https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800`}
-                      alt={`Project ${project}`}
+                      src={project.image}
+                      alt={project.title}
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-xl font-semibold mb-2">Project Title {project}</h3>
-                    <p className="text-gray-400 mb-4">
-                      A brief description of the project and the technologies used.
-                    </p>
-                    <div className="flex gap-4">
-                      <a href="#" className="text-blue-400 hover:text-blue-300 flex items-center gap-1">
-                        <ExternalLink size={16} />
-                        Live Demo
-                      </a>
-                      <a href="#" className="text-blue-400 hover:text-blue-300 flex items-center gap-1">
-                        <Github size={16} />
-                        Source
-                      </a>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <h3 className="text-xl font-semibold text-white">
+                        {project.title}
+                      </h3>
                     </div>
                   </div>
-                </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-400 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="text-xs bg-white/10 px-2 py-1 rounded"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-4">
+                      <motion.a
+                        href="#"
+                        className="text-blue-400 hover:text-blue-300 flex items-center gap-1"
+                        whileHover={{ x: 3 }}
+                      >
+                        <ExternalLink size={16} />
+                        Live Demo
+                      </motion.a>
+                      <motion.a
+                        href="#"
+                        className="text-blue-400 hover:text-blue-300 flex items-center gap-1"
+                        whileHover={{ x: 3 }}
+                      >
+                        <Github size={16} />
+                        Source
+                      </motion.a>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
+            </div>
+            <div className="text-center mt-12">
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg transition-colors"
+              >
+                View All Projects <ExternalLink size={16} />
+              </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
+      {/* Experience Preview Section */}
+      <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-blue-900/20 to-purple-900/20">
+        <div className="max-w-4xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -174,20 +337,158 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
               <Briefcase className="text-blue-400" />
+              Professional Journey
+            </h2>
+            <div className="space-y-8">
+              {experiences.map((exp) => (
+                <motion.div
+                  key={exp.id}
+                  className="group relative overflow-hidden rounded-lg bg-white/5 backdrop-blur-sm p-6 border border-white/10"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: exp.id * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ x: 5 }}
+                >
+                  <div className="flex gap-4 items-start">
+                    <div className="p-3 bg-white/10 rounded-full">
+                      {exp.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold">{exp.role}</h3>
+                      <div className="flex gap-4 items-center text-gray-400 mb-2">
+                        <span>{exp.company}</span>
+                        <span>•</span>
+                        <span>{exp.period}</span>
+                      </div>
+                      <p className="text-gray-300">{exp.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <Link
+                href="/experience"
+                className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300"
+              >
+                View my full experience <ArrowRight size={16} />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Blog Preview Section */}
+      <section className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-1/2 left-1/4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+          </div>
+        </div>
+        <div className="max-w-4xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
+              <BookOpen className="text-blue-400" />
+              Latest Writings
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[1, 2].map((post) => (
+                <motion.div
+                  key={post}
+                  className="group relative overflow-hidden rounded-lg bg-white/5 backdrop-blur-sm p-6 border border-white/10"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: post * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <h3 className="text-xl font-semibold mb-2">
+                    Article Title {post}
+                  </h3>
+                  <p className="text-gray-400 mb-4">
+                    A preview of the blog post content and main ideas discussed
+                    in the article.
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-400">
+                      May {post * 5}, 2023 • 5 min read
+                    </span>
+                    <Link
+                      href="/experience"
+                      className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300"
+                    >
+                      View my full experience <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <Link
+                href="/experience"
+                className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300"
+              >
+                View my full experience <ArrowRight size={16} />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section
+        id="contact"
+        className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-indigo-900/20 to-blue-900/20"
+      >
+        <div className="max-w-4xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
+              <Mail className="text-blue-400" />
               Get In Touch
             </h2>
-            <div className="bg-white/5 rounded-lg p-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-8 border border-white/10">
               <p className="text-gray-300 mb-6">
                 I'm currently open for freelance work and interesting projects.
-                Feel free to reach out if you'd like to discuss potential collaborations!
+                Feel free to reach out if you'd like to discuss potential
+                collaborations!
               </p>
-              <a
-                href="mailto:your@email.com"
-                className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors"
-              >
-                <Mail size={20} />
-                Contact Me
-              </a>
+              <div className="flex flex-wrap gap-4">
+                <motion.a
+                  href="mailto:your@email.com"
+                  className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Mail size={20} />
+                  Contact Me
+                </motion.a>
+                <motion.a
+                  href="https://linkedin.com"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Linkedin size={20} />
+                  LinkedIn
+                </motion.a>
+                <motion.a
+                  href="https://github.com"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Github size={20} />
+                  GitHub
+                </motion.a>
+              </div>
             </div>
           </motion.div>
         </div>
