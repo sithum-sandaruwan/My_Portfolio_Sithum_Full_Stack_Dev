@@ -80,7 +80,7 @@ export default function Home() {
           <div className="mb-8 relative">
             <div className="w-40 h-40 mx-auto relative rounded-full overflow-hidden border-4 border-blue-400/20 glass-effect floating">
               <Image
-                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&q=80"
+                src="/images/MNM_4850.JPG"
                 alt="Your Profile"
                 fill
                 className="object-cover"
@@ -102,10 +102,10 @@ export default function Home() {
             </motion.div>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
-            Your Name
+            Sithum Sandaruwan
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Full Stack Developer & UI/UX Designer
+            Front End Developer
           </p>
           <div className="flex gap-6 justify-center mb-12">
             <motion.a
@@ -138,32 +138,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
             className="flex gap-4 justify-center flex-wrap"
-          >
-            <Link
-              href="#about"
-              className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
-            >
-              About Me
-            </Link>
-            <Link
-              href="#projects"
-              className="px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg transition-colors"
-            >
-              View Projects
-            </Link>
-            <Link
-              href="/blog"
-              className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
-            >
-              My Blog
-            </Link>
-            <Link
-              href="/experience"
-              className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
-            >
-              Experience
-            </Link>
-          </motion.div>
+          ></motion.div>
         </motion.div>
       </section>
 

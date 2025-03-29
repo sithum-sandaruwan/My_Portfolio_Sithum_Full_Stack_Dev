@@ -140,3 +140,19 @@ body {
   background-clip: text;
   color: transparent;
 }
+
+/* Add smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar styles */
+nav {
+  transition: all 0.3s ease;
+}
+
+/* Active link styles */
+.active {
+  color: white;
+  font-weight: 600;
+}
