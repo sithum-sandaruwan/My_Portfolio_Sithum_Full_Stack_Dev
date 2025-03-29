@@ -12,10 +12,12 @@ import {
   BookOpen,
   Award,
   School,
-  ArrowRight, // Add this import
+  ArrowRight,
+  SunMediumIcon, // Add this import
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaMedium } from "react-icons/fa";
 
 export default function Home() {
   const projects = [
@@ -80,11 +82,14 @@ export default function Home() {
           <div className="mb-8 relative">
             <div className="w-40 h-40 mx-auto relative rounded-full overflow-hidden border-4 border-blue-400/20 glass-effect floating">
               <Image
-                src="/images/MNM_4850.JPG"
-                alt="Your Profile"
-                fill
-                className="object-cover"
+                src="/images/MNM_4850.webp"
+                alt="Sithum Sandaruwan"
+                width={160}
+                height={160}
                 priority
+                className="object-cover"
+                quality={90}
+                unoptimized={process.env.NODE_ENV === "development"}
               />
             </div>
             <motion.div
@@ -105,13 +110,14 @@ export default function Home() {
             Sithum Sandaruwan
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Front End Developer
+            Full Stack Developer | AI/ML Explorer | Certified Computer Hardware
+            Technician
           </p>
           <div className="flex gap-6 justify-center mb-12">
             <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="https://github.com"
+              href="https://github.com/sithum-sandaruwan"
               className="hover:text-blue-400 transition-colors p-2 glass-effect rounded-full"
             >
               <Github size={24} />
@@ -119,7 +125,7 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/sithum-sandaruwan/"
               className="hover:text-blue-400 transition-colors p-2 glass-effect rounded-full"
             >
               <Linkedin size={24} />
@@ -127,10 +133,18 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="mailto:your@email.com"
+              href="mailto:sithumsandaruwan200123@gmail.com"
               className="hover:text-blue-400 transition-colors p-2 glass-effect rounded-full"
             >
               <Mail size={24} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              href="https://medium.com/@sithumsandaruwan200123"
+              className="hover:text-blue-400 transition-colors p-2 glass-effect rounded-full"
+            >
+              <FaMedium size={24} />
             </motion.a>
           </div>
           <motion.div
