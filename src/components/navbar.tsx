@@ -2,8 +2,23 @@
 
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code2, Briefcase, User, BookOpen, X } from "lucide-react";
+import {
+  Code2,
+  Briefcase,
+  User,
+  BookOpen,
+  X,
+  Menu,
+  LucideIcon,
+} from "lucide-react";
 import { useState, useEffect } from "react";
+
+type NavLinkType = {
+  href: string;
+  text: string;
+  icon?: LucideIcon;
+  isButton?: boolean;
+};
 
 export default function Navbar() {
   const [isMounted, setIsMounted] = useState(false);
@@ -12,6 +27,34 @@ export default function Navbar() {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  const navLinks: NavLinkType[] = [
+    {
+      href: "#about",
+      text: "About",
+      icon: User,
+    },
+    {
+      href: "#projects",
+      text: "Projects",
+      icon: Code2,
+    },
+    {
+      href: "/blog/blogpage.tsx", // Updated to point to blog page
+      text: "Blog",
+      icon: BookOpen,
+    },
+    {
+      href: "/experience/experiencepage.tsx", // Updated to point to experience page
+      text: "Experience",
+      icon: Briefcase,
+    },
+    {
+      href: "#contact",
+      text: "Contact",
+      isButton: true,
+    },
+  ];
 
   if (!isMounted) {
     return (
@@ -64,24 +107,9 @@ export default function Navbar() {
                 transition={{ duration: 0.5, delay: 0.7 }}
                 className="text-gray-300 hover:text-white focus:outline-none"
                 onClick={() => setIsOpen(!isOpen)}
+                aria-label="Toggle menu"
               >
-                {isOpen ? (
-                  <X size={24} />
-                ) : (
-                  <svg
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                )}
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
               </motion.button>
             </div>
           </div>
@@ -122,45 +150,30 @@ export default function Navbar() {
   );
 }
 
-// NavLink component for reusability
-function NavLink({ link, onClick, className = "" }) {
+// NavLink component with proper typing
+function NavLink({
+  link,
+  onClick,
+  className = "",
+}: {
+  link: NavLinkType;
+  onClick?: () => void;
+  className?: string;
+}) {
+  const Icon = link.icon;
   return (
     <Link
       href={link.href}
-      className={`text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium flex items-center justify-center gap-1 ${className}`}
+      className={`${
+        link.isButton
+          ? "bg-blue-600 hover:bg-blue-700 text-white px-4"
+          : "text-gray-300 hover:text-white"
+      } 
+        px-3 py-2 rounded-md font-medium flex items-center justify-center gap-1 ${className}`}
       onClick={onClick}
     >
-      {link.icon && <link.icon size={20} />}
+      {Icon && <Icon size={20} />}
       {link.text}
     </Link>
   );
 }
-
-// Navigation links data
-const navLinks = [
-  {
-    href: "#about",
-    text: "About",
-    icon: User,
-  },
-  {
-    href: "#projects",
-    text: "Projects",
-    icon: Code2,
-  },
-  {
-    href: "/blog",
-    text: "Blog",
-    icon: BookOpen,
-  },
-  {
-    href: "/experience",
-    text: "Experience",
-    icon: Briefcase,
-  },
-  {
-    href: "#contact",
-    text: "Contact",
-    isButton: true,
-  },
-];

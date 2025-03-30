@@ -160,7 +160,6 @@ export default function Home() {
           </motion.div>
         </AnimatePresence>
       </section>
-
       {/* About Section */}
       <section id="about" className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
@@ -229,7 +228,6 @@ export default function Home() {
           </AnimatePresence>
         </div>
       </section>
-
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full bg-black/30">
@@ -326,6 +324,90 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="blog" className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-green-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-3000"></div>
+          </div>
+        </div>
+        <div className="max-w-4xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
+              <BookOpen className="text-blue-400" />
+              Latest Blog Posts
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Building Modern Web Apps with Next.js",
+                  excerpt:
+                    "Learn how to create performant web applications using Next.js and React Server Components.",
+                  date: "May 15, 2023",
+                  readTime: "5 min read",
+                  tags: ["Next.js", "React", "Web Development"],
+                },
+                {
+                  title: "AI/ML for Beginners: Getting Started",
+                  excerpt:
+                    "A beginner's guide to understanding and implementing basic machine learning concepts.",
+                  date: "April 28, 2023",
+                  readTime: "8 min read",
+                  tags: ["AI", "Machine Learning", "Beginners"],
+                },
+              ].map((post, index) => (
+                <motion.div
+                  key={index}
+                  className="group relative overflow-hidden rounded-lg bg-white/5 backdrop-blur-sm p-6 border border-white/10"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
+                  <p className="text-gray-400 mb-4">{post.excerpt}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {post.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs bg-white/10 px-2 py-1 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex justify-between items-center text-sm text-gray-400">
+                    <span>{post.date}</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <Link
+                      href="/blog"
+                      className="text-white font-medium flex items-center gap-1"
+                    >
+                      Read Post <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg transition-colors"
+              >
+                View All Blog Posts <BookOpen size={16} />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
       {/* Experience Preview Section */}
       <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-blue-900/20 to-purple-900/20">
         <div className="max-w-4xl mx-auto relative z-10">
@@ -380,7 +462,6 @@ export default function Home() {
           </AnimatePresence>
         </div>
       </section>
-
       {/* Contact Section */}
       <section
         id="contact"
