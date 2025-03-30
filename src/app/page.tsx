@@ -10,10 +10,7 @@ import {
   Briefcase,
   User,
   BookOpen,
-  Award,
-  School,
   ArrowRight,
-  SunMediumIcon,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -55,7 +52,7 @@ export default function Home() {
       company: "Plurative (PVT) LTD",
       period: "Aug 2024 - Feb 2025",
       description:
-        "Worked as Frontend developer in real world projects.And also improved the teamworking,analytical thinking skills",
+        "Worked as Frontend developer in real world projects. And also improved the teamworking, analytical thinking skills",
       icon: <Briefcase className="text-blue-400" />,
     },
     {
@@ -70,12 +67,12 @@ export default function Home() {
   ];
 
   if (!isClient) {
-    return null; // Return null or a loading state during SSR
+    return null;
   }
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section (unchanged as requested) */}
       <section className="animated-background min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <div className="absolute inset-0 opacity-20">
@@ -160,14 +157,12 @@ export default function Home() {
           </motion.div>
         </AnimatePresence>
       </section>
-      {/* About Section */}
-      <section id="about" className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 w-full h-full">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-            <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-3000"></div>
-          </div>
-        </div>
+
+      {/* About Section with Enhanced Animation */}
+      <section
+        id="about"
+        className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-blue-700/10 to-slate-400/10"
+      >
         <div className="max-w-4xl mx-auto relative z-10">
           <AnimatePresence initial={false}>
             <motion.div
@@ -192,13 +187,13 @@ export default function Home() {
                   </p>
                   <p className="text-gray-300">
                     I'm also currently expanding my knowledge base through a BIT
-                    degree at the University of Colombo School of Computing ,
+                    degree at the University of Colombo School of Computing,
                     exploring diverse areas within IT. To further enhance my
                     cloud computing skills and AI/ML knowledge, I am actively
                     engaged with Microsoft Learn and Google Cloud Skills Boost,
                     exploring cloud-based solutions and AI technologies.
                   </p>
-                  <p>
+                  <p className="text-gray-300">
                     I am currently seeking a Full Stack Developing position.
                     Let's connect! Feel free to reach out to discuss Full Stack
                     Development opportunities, explore innovative technologies,
@@ -233,14 +228,12 @@ export default function Home() {
           </AnimatePresence>
         </div>
       </section>
-      {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 w-full h-full bg-black/30">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
-            <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-6000"></div>
-          </div>
-        </div>
+
+      {/* Projects Section with Enhanced Animation */}
+      <section
+        id="projects"
+        className="py-20 px-4 relative overflow-hidden bg-gradient-to-bl from-indigo-950/10 to-purple-600/10"
+      >
         <div className="max-w-4xl mx-auto relative z-10">
           <AnimatePresence initial={false}>
             <motion.div
@@ -329,13 +322,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="blog" className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 w-full h-full">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-green-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-3000"></div>
-          </div>
-        </div>
+      {/* Blog Section with Enhanced Animation */}
+      <section
+        id="blog"
+        className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-purple-900/10 to-blue-900/10"
+      >
         <div className="max-w-4xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
@@ -413,7 +404,8 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-      {/* Experience Preview Section */}
+
+      {/* Experience Section with Enhanced Animation */}
       <section
         id="experience"
         className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-blue-900/20 to-purple-900/20"
@@ -470,7 +462,8 @@ export default function Home() {
           </AnimatePresence>
         </div>
       </section>
-      {/* Contact Section */}
+
+      {/* Contact Section with Enhanced Animation */}
       <section
         id="contact"
         className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-indigo-900/20 to-blue-900/20"
