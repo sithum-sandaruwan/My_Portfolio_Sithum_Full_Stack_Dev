@@ -27,10 +27,10 @@ export default function Home() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "To-Do List Application",
       description:
         "A full-featured online store with cart functionality and payment processing.",
-      technologies: ["Next.js", "Stripe", "Tailwind CSS"],
+      technologies: ["Next.js", "SpringBoot", "Tailwind CSS", "Mongo DB"],
       image:
         "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=800",
     },
