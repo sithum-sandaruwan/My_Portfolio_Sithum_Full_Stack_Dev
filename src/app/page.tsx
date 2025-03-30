@@ -16,6 +16,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaMedium } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { source } from "framer-motion/client";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -29,19 +30,31 @@ export default function Home() {
       id: 1,
       title: "To-Do List Application",
       description:
-        "A full-featured online store with cart functionality and payment processing.",
+        "created this application for manage the to-dos.From this app user can add the start date and end date for the each todo",
       technologies: ["Next.js", "SpringBoot", "Tailwind CSS", "Mongo DB"],
       image:
         "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=800",
+      source: "https://github.com/sithum-sandaruwan/To-Do-List.git",
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "Forestry Management System",
       description:
-        "Productivity application with drag-and-drop interface and team collaboration.",
-      technologies: ["React", "Node.js", "MongoDB"],
+        "I was work in this on trainee front end developer at Plurative company.",
+      technologies: ["React", "Nest.js", "Postgres", "Material UI"],
       image:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800",
+      source: "https://github.com/Plurative/forestery-management-fe.git",
+    },
+    {
+      id: 2,
+      title: "Weather Forecast Application",
+      description:
+        "From this application users can get the updated weather information",
+      technologies: ["JavaScript", "HTML", "CSS"],
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800",
+      source: "https://github.com/sithum-sandaruwan/Weather_App.git",
     },
   ];
 
@@ -57,11 +70,12 @@ export default function Home() {
     },
     {
       id: 2,
-      role: "Full Stack Developer",
-      company: "WebSolutions Ltd.",
-      period: "2018 - 2021",
+      role: "Certified Computer Hardware Technician",
+      company: "Metro Computers (PVT) LTD",
+      period: "Nov 2021 - Jun 2022",
       description:
-        "Developed and maintained web applications using React, Node.js, and MongoDB.",
+        "1-10 employees worked in this company. In this intern period I was got the hands-on experience about the troubleshooting hardware issues about like 30-50 computers and software implementing in the computer",
+
       icon: <Briefcase className="text-purple-400" />,
     },
   ];
@@ -161,7 +175,7 @@ export default function Home() {
       {/* About Section with Enhanced Animation */}
       <section
         id="about"
-        className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-blue-700/10 to-slate-400/10"
+        className="py-20 px-4 relative overflow-hidden bg-gradient-to-l  from-gray-800 to-blue-950"
       >
         <div className="max-w-4xl mx-auto relative z-10">
           <AnimatePresence initial={false}>
@@ -232,9 +246,9 @@ export default function Home() {
       {/* Projects Section with Enhanced Animation */}
       <section
         id="projects"
-        className="py-20 px-4 relative overflow-hidden bg-gradient-to-bl from-indigo-950/10 to-purple-600/10"
+        className="py-20 px-6 relative overflow-hidden  bg-gradient-to-l  from-gray-800 to-blue-950"
       >
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           <AnimatePresence initial={false}>
             <motion.div
               initial={{ opacity: 0 }}
@@ -246,7 +260,7 @@ export default function Home() {
                 <Code2 className="text-blue-400" />
                 Featured Projects
               </h2>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 {projects.map((project) => (
                   <motion.div
                     key={project.id}
@@ -297,9 +311,11 @@ export default function Home() {
                           Live Demo
                         </motion.a>
                         <motion.a
-                          href="#"
+                          href={project.source} // This will use the URL from your data
                           className="text-blue-400 hover:text-blue-300 flex items-center gap-1"
                           whileHover={{ x: 3 }}
+                          target="_blank" // Add this to open in new tab
+                          rel="noopener noreferrer" // Recommended for security with target="_blank"
                         >
                           <Github size={16} />
                           Source
@@ -311,7 +327,7 @@ export default function Home() {
               </div>
               <div className="text-center mt-12">
                 <Link
-                  href="/projects"
+                  href="https://github.com/sithum-sandaruwan"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg transition-colors"
                 >
                   View All Projects <ExternalLink size={16} />
@@ -325,7 +341,7 @@ export default function Home() {
       {/* Blog Section with Enhanced Animation */}
       <section
         id="blog"
-        className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-purple-900/10 to-blue-900/10"
+        className="py-20 px-4 relative overflow-hidden bg-gradient-to-l  from-gray-800 to-blue-950"
       >
         <div className="max-w-4xl mx-auto relative z-10">
           <motion.div
@@ -341,20 +357,45 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  title: "Building Modern Web Apps with Next.js",
+                  title: "Future With Quantum Computing",
                   excerpt:
-                    "Learn how to create performant web applications using Next.js and React Server Components.",
-                  date: "May 15, 2023",
-                  readTime: "5 min read",
-                  tags: ["Next.js", "React", "Web Development"],
+                    "You can get knowledge about next generation computers",
+                  date: "Feb 15, 2025",
+                  readTime: "6 min read",
+                  tags: ["Quantum Computing", "Next Gen"],
+                  source:
+                    "https://medium.com/@sithumsandaruwan200123/future-with-quantum-computing-d904b29e7e99",
                 },
                 {
-                  title: "AI/ML for Beginners: Getting Started",
+                  title: "Monolithic Vs Microservice",
                   excerpt:
-                    "A beginner's guide to understanding and implementing basic machine learning concepts.",
-                  date: "April 28, 2023",
-                  readTime: "8 min read",
-                  tags: ["AI", "Machine Learning", "Beginners"],
+                    "There are two most commonly used architectures for designing software.",
+                  date: "Dec 7, 2024",
+                  readTime: "5 min read",
+                  tags: ["Software Design", " Architectures", "Beginners"],
+                  source:
+                    "https://medium.com/@sithumsandaruwan200123/monolithic-vs-microservice-3d47afa14482",
+                },
+                {
+                  title:
+                    "Is the Python programming language a good language to use for new programmers..?",
+                  excerpt:
+                    "Yes, if you are new to programming, you can start learning programming using the Python language. ",
+                  date: "Nov 13, 2024",
+                  readTime: "5 min read",
+                  tags: ["Python", " programming language", "Beginners"],
+                  source:
+                    "https://medium.com/@sithumsandaruwan200123/is-the-python-programming-language-a-good-language-to-use-for-new-programmers-d76f08cda5f8",
+                },
+                {
+                  title: "What’s the Google Skill Cloud Boost…?",
+                  excerpt:
+                    "about a learning site of the Google company that I personally use. ",
+                  date: "Nov 3, 2024",
+                  readTime: "4 min read",
+                  tags: ["Google Skill", "Certificates", "Beginners"],
+                  source:
+                    "https://medium.com/@sithumsandaruwan200123/whats-the-google-skill-cloud-boost-5abd1213db19",
                 },
               ].map((post, index) => (
                 <motion.div
@@ -384,8 +425,10 @@ export default function Home() {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <Link
-                      href="#blog"
-                      className="text-white font-medium flex items-center gap-1"
+                      href={post.source || "#"} // Fallback to '#' if no source exists
+                      target="_blank" // Opens in new tab
+                      rel="noopener noreferrer" // Security best practice
+                      className="text-white font-medium flex items-center gap-1 hover:text-blue-300 transition-colors"
                     >
                       Read Post <ArrowRight size={16} />
                     </Link>
@@ -395,7 +438,7 @@ export default function Home() {
             </div>
             <div className="text-center mt-12">
               <Link
-                href="/blog"
+                href="https://medium.com/@sithumsandaruwan200123"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg transition-colors"
               >
                 View All Blog Posts <BookOpen size={16} />
@@ -408,7 +451,7 @@ export default function Home() {
       {/* Experience Section with Enhanced Animation */}
       <section
         id="experience"
-        className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-blue-900/20 to-purple-900/20"
+        className="py-20 px-4 relative overflow-hidden bg-gradient-to-l  from-gray-800 to-blue-950"
       >
         <div className="max-w-4xl mx-auto relative z-10">
           <AnimatePresence initial={false}>
@@ -466,7 +509,7 @@ export default function Home() {
       {/* Contact Section with Enhanced Animation */}
       <section
         id="contact"
-        className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-indigo-900/20 to-blue-900/20"
+        className="py-20 px-4 relative overflow-hidden bg-gradient-to-l  from-gray-800 to-blue-950"
       >
         <div className="max-w-4xl mx-auto relative z-10">
           <AnimatePresence initial={false}>

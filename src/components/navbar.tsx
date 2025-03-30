@@ -46,14 +46,14 @@ export default function Navbar() {
 
   if (!isMounted) {
     return (
-      <nav className="fixed top-1 left-0 right-0 z-20 bg-black/80 backdrop-blur-md border-b border-white/10 h-16 transition-all duration-300" />
+      <nav className="fixed top-0 left-0 right-0 z-20 bg-black/80 backdrop-blur-md border-b border-white/10 h-16 transition-all duration-300" />
     );
   }
 
   return (
     <>
       <nav
-        className={`fixed top-1 left-0 right-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 rounded-lg z-50 backdrop-blur-md border-b transition-all duration-300 border-4 ${
           scrolled
             ? "bg-black/90 border-white/10 shadow-xl h-16"
             : "bg-black/70 border-transparent h-19"
