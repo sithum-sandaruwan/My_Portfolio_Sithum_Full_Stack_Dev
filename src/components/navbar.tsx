@@ -40,12 +40,12 @@ export default function Navbar() {
       icon: Code2,
     },
     {
-      href: "/blog/blogpage.tsx", // Updated to point to blog page
+      href: "#blog", // Updated to point to blog page
       text: "Blog",
       icon: BookOpen,
     },
     {
-      href: "/experience/experiencepage.tsx", // Updated to point to experience page
+      href: "#experience", // Updated to point to experience page
       text: "Experience",
       icon: Briefcase,
     },

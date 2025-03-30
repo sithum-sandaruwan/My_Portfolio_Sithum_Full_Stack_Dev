@@ -51,11 +51,11 @@ export default function Home() {
   const experiences = [
     {
       id: 1,
-      role: "Senior Frontend Developer",
-      company: "TechCorp Inc.",
-      period: "2021 - Present",
+      role: "Trainee Front End Developer",
+      company: "Plurative (PVT) LTD",
+      period: "Aug 2024 - Feb 2025",
       description:
-        "Leading the frontend development team, implementing new features, and improving application performance.",
+        "Worked as Frontend developer in real world projects.And also improved the teamworking,analytical thinking skills",
       icon: <Briefcase className="text-blue-400" />,
     },
     {
@@ -183,35 +183,40 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <p className="text-gray-300">
-                    I'm a passionate developer with expertise in building modern
-                    web applications. With a strong foundation in both frontend
-                    and backend technologies, I create elegant solutions to
-                    complex problems.
+                    I am passionate and driven Full Stack Developer with a
+                    strong foundation in Java and modern web technologies. My
+                    journey into software development began with a fascination
+                    for how software solves real-world problems, and I'm
+                    constantly motivated by the opportunity to build impactful
+                    and user-friendly applications.
                   </p>
                   <p className="text-gray-300">
-                    When I'm not coding, you can find me exploring new
-                    technologies, contributing to open-source projects, or
-                    sharing knowledge with the developer community.
+                    I'm also currently expanding my knowledge base through a BIT
+                    degree at the University of Colombo School of Computing ,
+                    exploring diverse areas within IT. To further enhance my
+                    cloud computing skills and AI/ML knowledge, I am actively
+                    engaged with Microsoft Learn and Google Cloud Skills Boost,
+                    exploring cloud-based solutions and AI technologies.
                   </p>
-                  <div className="pt-4">
-                    <Link
-                      href="/experience"
-                      className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300"
-                    >
-                      View my full experience <ArrowRight size={16} />
-                    </Link>
-                  </div>
+                  <p>
+                    I am currently seeking a Full Stack Developing position.
+                    Let's connect! Feel free to reach out to discuss Full Stack
+                    Development opportunities, explore innovative technologies,
+                    or just connect and share insights.
+                  </p>
                 </div>
                 <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg p-6 glass-effect">
                   <h3 className="text-xl font-semibold mb-4">Tech Stack</h3>
                   <div className="grid grid-cols-2 gap-2">
                     {[
-                      "React",
+                      "Java",
+                      "SpringBoot",
                       "Next.js",
                       "TypeScript",
                       "Node.js",
                       "Tailwind CSS",
-                      "PostgreSQL",
+                      "Mongo DB",
+                      "SQL",
                     ].map((tech) => (
                       <motion.div
                         key={tech}
@@ -388,7 +393,7 @@ export default function Home() {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <Link
-                      href="/blog"
+                      href="#blog"
                       className="text-white font-medium flex items-center gap-1"
                     >
                       Read Post <ArrowRight size={16} />
@@ -409,7 +414,10 @@ export default function Home() {
         </div>
       </section>
       {/* Experience Preview Section */}
-      <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-blue-900/20 to-purple-900/20">
+      <section
+        id="experience"
+        className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-blue-900/20 to-purple-900/20"
+      >
         <div className="max-w-4xl mx-auto relative z-10">
           <AnimatePresence initial={false}>
             <motion.div
@@ -452,7 +460,7 @@ export default function Home() {
               </div>
               <div className="text-center mt-12">
                 <Link
-                  href="/experience"
+                  href="/experience/experiencepage.tsx"
                   className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300"
                 >
                   View my full experience <ArrowRight size={16} />
