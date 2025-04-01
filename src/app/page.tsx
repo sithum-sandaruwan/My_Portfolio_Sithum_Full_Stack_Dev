@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaMedium } from "react-icons/fa";
+import { FaMedium, FaYoutube } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { source } from "framer-motion/client";
 
@@ -50,8 +50,7 @@ export default function Home() {
       description:
         "From this application users can get the updated weather information",
       technologies: ["JavaScript", "HTML", "CSS"],
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800",
+      image: "/images/Weather Forecast Application interface.webp",
       source: "https://github.com/sithum-sandaruwan/Weather_App.git",
     },
   ];
@@ -149,14 +148,7 @@ export default function Home() {
               >
                 <Linkedin size={24} />
               </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                href="mailto:sithumsandaruwan200123@gmail.com"
-                className="hover:text-blue-400 transition-colors p-2 glass-effect rounded-full"
-              >
-                <Mail size={24} />
-              </motion.a>
+
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -164,6 +156,14 @@ export default function Home() {
                 className="hover:text-blue-400 transition-colors p-2 glass-effect rounded-full"
               >
                 <FaMedium size={24} />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                href="https://www.youtube.com/@NovaTechTalkSithum"
+                className="hover:text-blue-400 transition-colors p-2 glass-effect rounded-full"
+              >
+                <FaYoutube size={24} />
               </motion.a>
             </div>
           </motion.div>
@@ -587,9 +587,9 @@ export default function Home() {
               </h2>
               <div className="bg-white/5 backdrop-blur-sm rounded-lg p-8 border border-white/10">
                 <p className="text-gray-300 mb-6">
-                  I'm currently open for freelance work and interesting
-                  projects. Feel free to reach out if you'd like to discuss
-                  potential collaborations!
+                  I'm currently open for Full Stack Developer position and
+                  interesting projects. Feel free to reach out if you'd like to
+                  discuss potential collaborations!
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <motion.a
