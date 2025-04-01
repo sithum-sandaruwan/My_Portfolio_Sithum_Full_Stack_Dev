@@ -32,8 +32,7 @@ export default function Home() {
       description:
         "created this application for manage the to-dos.From this app user can add the start date and end date for the each todo",
       technologies: ["Next.js", "SpringBoot", "Tailwind CSS", "Mongo DB"],
-      image:
-        "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=800",
+      image: "/images/8431434_3902898.webp",
       source: "https://github.com/sithum-sandaruwan/To-Do-List.git",
     },
     {
@@ -42,8 +41,7 @@ export default function Home() {
       description:
         "I was work in this on trainee front end developer at Plurative company.",
       technologies: ["React", "Nest.js", "Postgres", "Material UI"],
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800",
+      image: "/images/Forestry Management System Interface.webp",
       source: "https://github.com/Plurative/forestery-management-fe.git",
     },
     {
@@ -86,7 +84,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section (unchanged as requested) */}
+      {/* Hero Section */}
       <section className="animated-background min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <div className="absolute inset-0 opacity-20">
@@ -172,10 +170,10 @@ export default function Home() {
         </AnimatePresence>
       </section>
 
-      {/* About Section with Enhanced Animation */}
+      {/* About Section */}
       <section
         id="about"
-        className="py-20 px-4 relative overflow-hidden bg-gradient-to-l  from-gray-800 to-blue-950"
+        className="py-20 px-4 relative overflow-hidden bg-gradient-to-l from-gray-800 to-blue-950"
       >
         <div className="max-w-4xl mx-auto relative z-10">
           <AnimatePresence initial={false}>
@@ -214,28 +212,92 @@ export default function Home() {
                     or just connect and share insights.
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg p-6 glass-effect">
-                  <h3 className="text-xl font-semibold mb-4">Tech Stack</h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    {[
-                      "Java",
-                      "SpringBoot",
-                      "Next.js",
-                      "TypeScript",
-                      "Node.js",
-                      "Tailwind CSS",
-                      "Mongo DB",
-                      "SQL",
-                    ].map((tech) => (
-                      <motion.div
-                        key={tech}
-                        className="bg-white/5 rounded px-3 py-2 text-center"
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        {tech}
-                      </motion.div>
-                    ))}
-                  </div>
+
+                {/* Updated Tech Stack Section */}
+                <div className="space-y-6">
+                  <motion.div
+                    className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg p-6 glass-effect"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <h3 className="text-xl font-semibold mb-4 text-center">
+                      My Tech Stack
+                    </h3>
+
+                    <div className="mb-6">
+                      <h4 className="text-sm font-medium text-blue-400 mb-2">
+                        FRONTEND
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          "Next.js",
+                          "React",
+                          "TypeScript",
+                          "Tailwind CSS",
+                          "HTML/CSS",
+                          "Angular",
+                        ].map((tech) => (
+                          <motion.div
+                            key={tech}
+                            className="bg-white/5 rounded px-3 py-2 text-sm"
+                            whileHover={{ scale: 1.05 }}
+                          >
+                            {tech}
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mb-6">
+                      <h4 className="text-sm font-medium text-purple-400 mb-2">
+                        BACKEND
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {["Java", "SpringBoot", "Node.js"].map((tech) => (
+                          <motion.div
+                            key={tech}
+                            className="bg-white/5 rounded px-3 py-2 text-sm"
+                            whileHover={{ scale: 1.05 }}
+                          >
+                            {tech}
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mb-6">
+                      <h4 className="text-sm font-medium text-green-400 mb-2">
+                        DATABASE
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {["MongoDB", "MySQL"].map((tech) => (
+                          <motion.div
+                            key={tech}
+                            className="bg-white/5 rounded px-3 py-2 text-sm"
+                            whileHover={{ scale: 1.05 }}
+                          >
+                            {tech}
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="text-sm font-medium text-yellow-400 mb-2">
+                        TOOLS & OTHERS
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {["Git", "Postman", "Figma"].map((tech) => (
+                          <motion.div
+                            key={tech}
+                            className="bg-white/5 rounded px-3 py-2 text-sm"
+                            whileHover={{ scale: 1.05 }}
+                          >
+                            {tech}
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -243,7 +305,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section with Enhanced Animation */}
+      {/* Projects Section  */}
       <section
         id="projects"
         className="py-20 px-6 relative overflow-hidden  bg-gradient-to-l  from-gray-800 to-blue-950"
@@ -311,11 +373,11 @@ export default function Home() {
                           Live Demo
                         </motion.a>
                         <motion.a
-                          href={project.source} // This will use the URL from your data
+                          href={project.source}
                           className="text-blue-400 hover:text-blue-300 flex items-center gap-1"
                           whileHover={{ x: 3 }}
-                          target="_blank" // Add this to open in new tab
-                          rel="noopener noreferrer" // Recommended for security with target="_blank"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <Github size={16} />
                           Source
@@ -338,7 +400,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Blog Section with Enhanced Animation */}
+      {/* Blog Section */}
       <section
         id="blog"
         className="py-20 px-4 relative overflow-hidden bg-gradient-to-l  from-gray-800 to-blue-950"
@@ -448,7 +510,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience Section with Enhanced Animation */}
+      {/* Experience Section  */}
       <section
         id="experience"
         className="py-20 px-4 relative overflow-hidden bg-gradient-to-l  from-gray-800 to-blue-950"
@@ -506,7 +568,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section with Enhanced Animation */}
+      {/* Contact Section  */}
       <section
         id="contact"
         className="py-20 px-4 relative overflow-hidden bg-gradient-to-l  from-gray-800 to-blue-950"
@@ -538,28 +600,100 @@ export default function Home() {
                     <Mail size={20} />
                     Contact Me
                   </motion.a>
-                  <motion.a
-                    href="https://linkedin.com/in/sithum-sandaruwan/"
-                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <Linkedin size={20} />
-                    LinkedIn
-                  </motion.a>
-                  <motion.a
-                    href="https://github.com/sithum-sandaruwan"
-                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <Github size={20} />
-                    GitHub
-                  </motion.a>
                 </div>
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
       </section>
+
+      {/* Footer Section */}
+      <footer className="relative py-12 px-4 bg-gradient-to-t from-gray-900 to-gray-800 overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute bottom-10 left-1/4 w-32 h-32 bg-blue-500 rounded-full mix-blend-overlay filter blur-xl animate-blob"></div>
+          <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-purple-500 rounded-full mix-blend-overlay filter blur-xl animate-blob animation-delay-2000"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row justify-between items-center gap-8"
+          >
+            {/* Copyright */}
+            <div className="text-center md:text-left">
+              <p className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} Sithum Sandaruwan. All rights
+                reserved.
+              </p>
+              <motion.p
+                className="text-gray-500 mt-2 text-xs flex items-center justify-center md:justify-start gap-1"
+                whileHover={{ scale: 1.05 }}
+              >
+                <span>Made with</span>
+                <span className="text-red-500">❤️</span>
+                <span>+</span>
+                <span className="text-blue-400">React</span>
+                <span>+</span>
+                <span className="text-green-400">Next.js</span>
+                <span>+</span>
+                <span className="text-purple-400">Framer Motion</span>
+              </motion.p>
+            </div>
+
+            {/* Quick Links */}
+            <motion.div className="flex gap-6" whileHover={{ scale: 1.02 }}>
+              <motion.a
+                href="https://github.com/sithum-sandaruwan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                whileHover={{ y: -3 }}
+              >
+                <Github size={20} />
+              </motion.a>
+              <motion.a
+                href="https://linkedin.com/in/sithum-sandaruwan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+                whileHover={{ y: -3 }}
+              >
+                <Linkedin size={20} />
+              </motion.a>
+              <motion.a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-red-400 transition-colors flex items-center gap-1"
+                whileHover={{ y: -3 }}
+              >
+                <Briefcase size={18} />
+                <span className="text-sm">Resume</span>
+              </motion.a>
+            </motion.div>
+
+            {/*Back-to-Top Button */}
+            <motion.button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="hidden md:flex items-center gap-2 text-xs text-gray-400 hover:text-blue-400 transition-colors group"
+              whileHover={{ scale: 1.1 }}
+            >
+              <motion.span
+                animate={{ y: [0, -2, 0] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                className="inline-block"
+              >
+                ↑
+              </motion.span>
+              Back to Top
+            </motion.button>
+          </motion.div>
+        </div>
+      </footer>
     </main>
   );
 }
