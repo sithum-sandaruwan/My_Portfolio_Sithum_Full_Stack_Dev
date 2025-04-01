@@ -665,7 +665,7 @@ export default function Home() {
                 <Linkedin size={20} />
               </motion.a>
               <motion.a
-                href="/resume.pdf"
+                href="/CV/Sithum_Sandaruwan_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-red-400 transition-colors flex items-center gap-1"
