@@ -17,6 +17,7 @@ import Link from "next/link";
 import { FaMedium, FaYoutube } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { source } from "framer-motion/client";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -691,6 +692,7 @@ export default function Home() {
               </motion.span>
               Back to Top
             </motion.button>
+            <Analytics />
           </motion.div>
         </div>
       </footer>
